@@ -1,19 +1,21 @@
 package fr.eni.filmotheque.config;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.context.annotation.ApplicationScope;
 
-import fr.eni.filmotheque.bo.Film;
+import fr.eni.filmotheque.bo.Genre;
+import fr.eni.filmotheque.services.GenreService;
 
 @Configuration
 public class filmothequeConfig {
 	
 	@Bean
-	public List<Film> listeFilms() {
-		return new ArrayList<Film>();
+	@ApplicationScope
+	public List<Genre> genres(GenreService service) {
+		return service.getListeGenres();
 	}
 
 }

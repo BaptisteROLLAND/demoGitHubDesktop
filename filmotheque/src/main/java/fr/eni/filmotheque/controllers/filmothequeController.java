@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import fr.eni.filmotheque.bo.Film;
 
 @Controller
+@SessionAttributes("films")
 public class filmothequeController {
 
 	@ModelAttribute("films")
@@ -37,7 +39,6 @@ public class filmothequeController {
 
 	@RequestMapping("/filmotheque")
 	public String filmotheque(Model modele) {
-
 		return "filmotheque";
 	}
 
