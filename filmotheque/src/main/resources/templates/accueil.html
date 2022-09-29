@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Accueil</title>
+</head>
+<body>
+	<h1>Accueil</h1>
+	<a href="/filmotheque">Liste des films</a>
+	
+	<form th:action="@{/accueil}" th:object=${film} method="post">
+	  <label for="idInput">Id : </label>
+	  <input type="number" th:field="*{id}" id="idInput" />
+	  <label for="nomInput">Nom : </label>
+	  <input type="text" th:field="*{nom}" id="nomInput" />
+	  <label for="anneeInput">Année : </label>
+	  <input type="number" th:field="*{annee}" id="anneeInput" />
+	  <label for="dureeInput">Durée : </label>
+	  <input type="number" th:field="*{duree}" id="dureeInput" />
+	  <label for="synopsisInput">Durée : </label>
+	  <input type="text" th:field="*{synopsis}" id=""synopsisInput"" />
+	</form>
+</body>
+</html>

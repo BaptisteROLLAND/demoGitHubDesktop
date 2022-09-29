@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Filmothèque</h1>
+	<div th:each="film : ${listeFilms}">
+		Nom : <a><span th:text="${film.nom}"></span></a>
+	</div>
+	<a href="/detail">detail</a>
+</body>
+</html>
