@@ -17,19 +17,7 @@ import fr.eni.filmotheque.bo.Film;
 @Controller
 public class filmothequeController {
 
-	private List<Film> listeFilms;
-
-	public filmothequeController() {
-
-	}
-
-	@Autowired
-	@Qualifier("listeFilms")
-	public void setListePersonnes(List<Film> listeFilms) {
-		this.listeFilms = listeFilms;
-	}
-
-	@ModelAttribute("listeFilms")
+	@ModelAttribute("films")
 	public List<Film> getFilms() {
 		return new ArrayList<Film>();
 	}
