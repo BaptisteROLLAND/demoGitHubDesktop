@@ -45,7 +45,7 @@
 		</tr>
 		<tr th:each="film: ${films}">
 			<td>
-				<a th:href="@{/detail(film=${film.id})}" th:text="${film.id}"></a>
+				<a th:href="@{/detail(id=${film.id})}" th:text="${film.id}"></a>
 			</td>
 			<td th:text="${film.nom}" />
 			<td th:text="${film.annee}" />
