@@ -44,7 +44,9 @@
 			<td>id</td><td>nom</td><td>annee</td><td>duree</td><td>Synopsis</td><td>Genre</td>
 		</tr>
 		<tr th:each="film: ${films}">
-			<td th:text="${film.id}" />
+			<td>
+				<a th:href="@{/detail(film=${film.id})}" th:text="${film.id}"></a>
+			</td>
 			<td th:text="${film.nom}" />
 			<td th:text="${film.annee}" />
 			<td th:text="${film.duree}" />
