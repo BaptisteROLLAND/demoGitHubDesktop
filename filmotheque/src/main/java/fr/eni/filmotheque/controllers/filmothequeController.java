@@ -28,17 +28,22 @@ public class filmothequeController {
 	public List<Film> getFilms() {
 		return service.getListeFilms();
 	}
+	
+	@ModelAttribute("film")
+	public Film getFilm() {
+		return new Film();
+	}
 
 	@GetMapping({ "", "/", "/index", "/accueil" })
 	public String accueil(Model modele) {
-		modele.addAttribute("film", new Film(1, "nom 1", 1991, 1, "synopsis 1"));
+//		modele.addAttribute("film", new Film(1, "nom 1", 1991, 1, "synopsis 1"));
+		List<Film> liste = service.getListeFilms();
 		return "accueil";
 	}
 
 	@PostMapping({ "", "/", "/index", "/accueil" })
-	public String traitFormulaire(@ModelAttribute("film") Film film, 
-			@ModelAttribute("films") List<Film> listeFilms) {
-		listeFilms.add(film);
+	public String traitFormulaire(@ModelAttribute("film") Film film) {
+		service.addInListeFilms(film);
 		return "accueil";
 	}
 

@@ -19,9 +19,12 @@ public class FilmServiceImpl implements FilmService{
 	}
 	
 	public Film getFilmById(int id) {
+		System.out.println(listeFilms);
 		
 		for(Film film: listeFilms) {
+			System.out.println(id + "dif");
 			if (film.getId() == id) {
+				System.out.println(id);
 				return film;
 			}
 		}
@@ -30,7 +33,12 @@ public class FilmServiceImpl implements FilmService{
 	}
 	
 	public List<Film> getListeFilms(){
-		return new ArrayList<Film>();
+		return listeFilms;
+	}
+	
+	public void addInListeFilms(Film film) {
+		System.out.println("service" + film.getSynopsis());
+		listeFilms.add(film);
 	}
 
 }
