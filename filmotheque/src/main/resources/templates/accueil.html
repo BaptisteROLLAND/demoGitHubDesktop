@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Accueil</title>
+<style>
+  form {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-gap: 20px;
+  }
+  label { text-align: center;}
+  .theader { text-align: center; font-weight:bold; font-size: larger;}
+</style>
 </head>
 <body>
 	<h1>Accueil</h1>
@@ -19,7 +28,31 @@
 	  <input type="number" th:field="*{duree}" id="dureeInput" />
 	  <label for="synopsisInput">Durée : </label>
 	  <input type="text" th:field="*{synopsis}" id="synopsisInput" />
-	  <button>Valider</button>
+	  
+	  <label for="genreInput" >Genre</label>
+	  <select th:field="*{genre}" required>
+		  	<option th:each="genre: ${@genres}" 
+		  	th:value="${genre.id}" th:text="${genre.libelle}"></option>
+	  </select>
+	  
+	  <button type="submit">Valider</button>
 	</form>
+	
+	<h1>Liste des films :</h1>
+	<table>
+		<tr class="theader">
+			<td>id</td><td>nom</td><td>annee</td><td>duree</td><td>Synopsis</td><td>Genre</td>
+		</tr>
+		<tr th:each="film: ${films}">
+			<td>
+				<a th:href="@{/detail(film=${film.id})}" th:text="${film.id}"></a>
+			</td>
+			<td th:text="${film.nom}" />
+			<td th:text="${film.annee}" />
+			<td th:text="${film.duree}" />
+			<td th:text="${film.synopsis}" />
+	        <td th:text="${film.genre.libelle}"></td>
+		</tr>
+	</table>
 </body>
 </html>

@@ -6,9 +6,19 @@
 </head>
 <body>
 	<h1>Filmothèque</h1>
-	<div th:each="film : ${listeFilms}">
-		Nom : <a><span th:text="${film.nom}"></span></a>
-	</div>
 	<a href="/detail">detail</a>
+	
+	<table>
+		<tr class="theader">
+			<td>id</td><td>nom</td><td>annee</td><td>duree</td><td>Synopsis</td><td>Genre</td>
+		</tr>
+		<tr th:each="film: ${films}">
+			<td th:text="${film.id}" />
+			<td th:text="${film.nom}" />
+			<td th:text="${film.annee}" />
+			<td th:text="${film.duree}" />
+	        <td th:text="${film.genre.libelle}"></td>		 				
+		</tr>
+	</table>
 </body>
 </html>
