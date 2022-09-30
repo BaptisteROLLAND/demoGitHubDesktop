@@ -6,6 +6,7 @@ public class Film {
 	private int annee;
 	private int duree;
 	private String synopsis;
+	private Genre genre;
 	
 	public Film() {
 	}
@@ -17,6 +18,7 @@ public class Film {
 		this.annee = annee;
 		this.duree = duree;
 		this.synopsis = synopsis;
+		this.genre= genre;
 	}
 
 	public String getNom() {
@@ -57,6 +59,14 @@ public class Film {
 
 	public void setSynopsis(String synopsis) {
 		this.synopsis = synopsis;
+	}
+
+	public Genre getGenre() {
+		return genre;
+	}
+
+	public void setGenre(Genre genre) {
+		this.genre = genre;
 	}
 
 	@Override
