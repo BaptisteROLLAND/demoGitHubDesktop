@@ -11,5 +11,7 @@ public interface FilmService {
 	public List<Film> getListeFilms();
 	
 	public void addInListeFilms(Film film);
+	
+	public Film getFilm();
 
 }

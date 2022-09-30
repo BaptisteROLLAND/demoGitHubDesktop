@@ -41,4 +41,8 @@ public class FilmServiceImpl implements FilmService{
 		listeFilms.add(film);
 	}
 
+	public Film getFilm() {
+		return new Film();
+	}
+
 }

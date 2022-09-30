@@ -31,7 +31,7 @@ public class filmothequeController {
 	
 	@ModelAttribute("film")
 	public Film getFilm() {
-		return new Film();
+		return service.getFilm();
 	}
 
 	@GetMapping({ "", "/", "/index", "/accueil" })
