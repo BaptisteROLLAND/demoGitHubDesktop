@@ -1,6 +1,5 @@
 package fr.eni.filmotheque.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -27,7 +26,7 @@ public class filmothequeController {
 
 	@ModelAttribute("films")
 	public List<Film> getFilms() {
-		return new ArrayList<Film>();
+		return service.getListeFilms();
 	}
 
 	@GetMapping({ "", "/", "/index", "/accueil" })
@@ -48,11 +47,11 @@ public class filmothequeController {
 		return "filmotheque";
 	}
 
-	@RequestMapping("/detail")
-	public String detail(@ModelAttribute("film") Film film, Model modele) {
-		modele.addAttribute("film", film);
-		return "detail";
-	}
+//	@RequestMapping("/detail")
+//	public String detail(@ModelAttribute("film") Film film, Model modele) {
+//		modele.addAttribute("film", film);
+//		return "detail";
+//	}
 
 	@GetMapping("/detail")
 	public String detailFilm(@RequestParam int id, Model model) {
