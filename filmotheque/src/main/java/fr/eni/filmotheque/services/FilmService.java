@@ -9,5 +9,7 @@ public interface FilmService {
 	public Film getFilmById(int id);	
 	
 	public List<Film> getListeFilms();
+	
+	public void addInListeFilms(Film film);
 
 }
